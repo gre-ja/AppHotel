@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotel.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="CadetBlue">
+    
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="15"
+                         Spacing="10">
+        
+        <Label 
+            Text="Cálculo da Diária"
+            FontAttributes="Bold"
+            FontSize="35"
+            TextColor="White"
+            HorizontalOptions="Center"/>
+
+        <Frame BackgroundColor="White"
+               BorderColor="CadetBlue">
+
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*, *, 2*">
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Adultos:"
+                           TextColor="#3b413c"
+                           FontSize="17"
+                           Margin="5,4,0,2"/>
+
+                    <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="#446DF6"
+                           Margin="0,6,0,0"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_adultos }"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Stepper Grid.Row="0" Grid.Column="2"
+                             x:Name="stp_adultos"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1"
+                             BackgroundColor="CadetBlue"/>
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Crianças:"
+                           TextColor="#3b413c"
+                           FontSize="17"
+                           Margin="5,4,0,2"/>
+
+                    <Label Grid.Row="1" Grid.Column="1"
+                           TextColor="#446DF6"
+                           Margin="0,6,0,0"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_criancas }"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                             x:Name="stp_criancas"
+                             Minimum="0"
+                             Maximum="3"
+                             Increment="1"
+                             BackgroundColor="CadetBlue"/>
+
+                </Grid>
+
+                <Label Text="Escolha sua Suíte"
+                       TextColor="#3b413c"
+                       FontSize="17"
+                       Margin="5,8,0,2"/>
+
+                <Border Stroke="CadetBlue"
+                        StrokeThickness="1"
+                        Background="Transparent"
+                        WidthRequest="290">
+                    
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="10"/>
+                    </Border.StrokeShape>
+                    
+                    <Picker x:Name="pck_quarto"
+                            Title="Selecione sua acomodação"
+                            TextColor="#3b413c"      
+                            BackgroundColor="Transparent"
+                            ItemDisplayBinding="{Binding Descricao}"/>
+                </Border>
+
+                <Frame Padding="10"
+                       Margin="11"
+                       BackgroundColor="CadetBlue"
+                       BorderColor="CadetBlue">
+
+                    <VerticalStackLayout>
+                        <Label Text="Período da Estadia"
+                               FontSize="17"
+                               Margin="48,0,0,10"/>
+
+                        <HorizontalStackLayout>
+                            <Label Text="Check-in:"
+                                   FontSize="15"
+                                   Margin="20,10,20,0"/>
+                            <DatePicker x:Name="dtpck_checkin"
+                                        Format="dd/MM/yyyy"
+                                        DateSelected="dtpck_checkin_DateSelected"
+                                        Margin="14,0,0,2"
+                                        BackgroundColor="White"
+                                        TextColor="CadetBlue"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <Label Text="Check-out:"
+                                   FontSize="15"
+                                   Margin="20,10,20,0"/>
+                            <DatePicker x:Name="dtpck_checkout"
+                                        Format="dd/MM/yyyy"
+                                        Margin="3,0,0,0"
+                                        BackgroundColor="White"
+                                        TextColor="CadetBlue"/>                           
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Button Text="Calcular"
+                        TextColor="CadetBlue"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        BackgroundColor="White"
+                        BorderColor="CadetBlue"
+                        BorderWidth="1"
+                        Margin="10,2,10,5"
+                        Clicked="Button_Avancar"/>
+
+                <Button Text="Sobre"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="12"
+                        BackgroundColor="CadetBlue"                    
+                        WidthRequest="69"
+                        Margin="220,7,0,0"
+                        Clicked="Button_Clicked"/>   
+
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>

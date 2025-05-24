@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotel.Views.Sobre"
+             Title="Sobre"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="CadetBlue">
+    
+    <VerticalStackLayout HorizontalOptions="CenterAndExpand">
+
+        <Image Source="gr.png"
+               WidthRequest="450"
+               HeightRequest="450"
+               Margin="45,0,0,-190"/>
+
+        <Label 
+            Text="Sobre"
+            FontSize="35"
+            HorizontalTextAlignment="Center"
+            TextColor="White"
+            FontAttributes="Bold"/>
+
+        <Label
+            Text="App desenvolvido por: Grécia J.A.            
+                        Maio-2025"
+            TextColor="White"
+            FontSize="15"
+            HorizontalTextAlignment="Center"
+            Margin="0,15,0,0"/>
+
+        <Button Text="Voltar"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="12"
+                BackgroundColor="CadetBlue"                    
+                BorderColor="White"
+                BorderWidth="2"
+                WidthRequest="69"
+                Margin="220,50,0,0"
+                Clicked="Button_Clicked"/>
+        
+    </VerticalStackLayout>
+</ContentPage>

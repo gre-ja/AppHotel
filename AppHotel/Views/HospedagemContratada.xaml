@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotel.Views.HospedagemContratada"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="CadetBlue">
+
+    <Border Stroke="CadetBlue"
+            StrokeThickness="2"
+            BackgroundColor="White"            
+            Margin="15,90,15,100">
+        <Border.StrokeShape>
+            <RoundRectangle CornerRadius="10"/>
+        </Border.StrokeShape>
+        
+        <VerticalStackLayout VerticalOptions="CenterAndExpand">
+
+            <Label Text="Suite Super Luxo"
+                   FontSize="30"  
+                   FontAttributes="Bold"               
+                   HorizontalOptions="Center"
+                   TextColor="CadetBlue"
+                   Margin="0,10,0,5"/>
+          
+
+            <Frame BackgroundColor="Transparent"
+                   BorderColor="Transparent"
+                   Margin="0,0,0,-15">
+                <HorizontalStackLayout>
+                <HorizontalStackLayout Margin="30,0,0,0">
+                    <Label Text="Adulto(s): "
+                           TextColor="CadetBlue"
+                           FontAttributes="Bold"
+                           FontSize="17"/>
+                    <Label Text=" 2"
+                           TextColor="#3b413c"
+                           FontSize="17"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Margin="50,0,0,0">
+                    <Label Text="Criança(s): "
+                           TextColor="CadetBlue"
+                           FontAttributes="Bold"
+                           FontSize="17"/>
+                    <Label Text=" 1"
+                           TextColor="#3b413c"
+                           FontSize="17"/>
+                </HorizontalStackLayout>
+            </HorizontalStackLayout>
+        </Frame>
+
+            <Frame BackgroundColor="Transparent"
+                   BorderColor="Transparent">
+                <Grid ColumnDefinitions="*, *, *"
+                      RowDefinitions="Auto, Auto">
+                <Label Grid.Row="0" 
+                       Grid.Column="0" 
+                       FontSize="17"
+                       Text="Check-in:"
+                       TextColor="CadetBlue"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,5"/>
+                <Label Grid.Row="0"
+                       Grid.Column="1" 
+                       FontSize="17"
+                       Text="Check-out:"
+                       FontAttributes="Bold"
+                       TextColor="CadetBlue"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,5"/>
+                <Label Grid.Row="0" 
+                       Grid.Column="2"
+                       FontSize="17"
+                       Text="Estadia:"
+                       FontAttributes="Bold"
+                       TextColor="CadetBlue"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,5"/>
+
+                <Label Grid.Row="1" 
+                       Grid.Column="0" 
+                       Text="30/04/2025"
+                       TextColor="#3b413c"                      
+                       FontSize="15"
+                       HorizontalOptions="Center"/>
+                <Label Grid.Row="1" 
+                       Grid.Column="1" 
+                       Text="19/05/2025"
+                       TextColor="#3b413c"                      
+                       FontSize="15"
+                       HorizontalOptions="Center"/>
+                <Label Grid.Row="1" 
+                       Grid.Column="2" 
+                       Text="20"                       
+                       FontSize="15"
+                       TextColor="#3b413c"
+                       HorizontalOptions="Center"/>
+            </Grid>
+        </Frame>
+
+        <Frame BackgroundColor="Transparent"
+               BorderColor="CadetBlue"
+               WidthRequest="220"
+               Margin="0,10,0,5">
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="Valor total: "
+                       TextColor="CadetBlue"
+                       FontSize="17"
+                       FontAttributes="Bold"/>
+                <Label Text=" R$ 215,00"
+                       TextColor="CadetBlue"
+                       FontSize="17"/>
+            </HorizontalStackLayout>
+        </Frame>
+
+        <Button Text="Voltar"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="12"
+                BackgroundColor="CadetBlue"                    
+                BorderColor="White"
+                BorderWidth="2"
+                WidthRequest="69"
+                Margin="0,15,0,0"
+                Clicked="Button_Clicked"/>
+
+    </VerticalStackLayout>
+    </Border>    
+</ContentPage>
